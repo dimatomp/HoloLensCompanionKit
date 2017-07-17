@@ -3,7 +3,7 @@
 
 #pragma once
 
-#define CHESS_SQUARE_SIZE 0.0677 // Width of the chess squares in meters = 2.66 inches.
+#define CHESS_SQUARE_SIZE 0.05 // Width of the chess squares in meters = 2.66 inches.
 // Note: must have > 3 columns and rows.
 #define GRID_CELLS_X 6 // Number of columns in the chess board.
 #define GRID_CELLS_Y 4 // Number of rows in the chess board.
@@ -11,9 +11,9 @@
 // NOTE: If you change this to the HoloLens IP, you will need to:
 //       1. Under the Security tab in the developer portal, disable SSL connection.
 //       2. Use http://%DEVICE_IP%/ - do not use https://
-#define HOLOLENS_ADDRESS L"http://127.0.0.1:10080/"
-#define HOLOLENS_USER L"user"
-#define HOLOLENS_PW L"password"
+#define HOLOLENS_ADDRESS L"http://192.168.15.73/"
+#define HOLOLENS_USER L"dimatomp"
+#define HOLOLENS_PW L"tompesecret"
 
 // Color feed from Hololens.
 #define HOLO_WIDTH 1408

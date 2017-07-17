@@ -2,6 +2,8 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 #include "stdafx.h"
+#include "DeckLinkDevice.h"
+#include "DeckLinkManager.h"
 
 #if USE_DECKLINK
 
