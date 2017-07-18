@@ -10,11 +10,14 @@ class TestFrameProvider :
 
 	bool TryInitialize() 
 	{
+		if (!_initializeCalled)
+			return false;
 		if (_isInitialized)
 			return true;
-		return _isInitialized = SUCCEEDED(_impl->Initialize(_colorSRV, _outputTexture));
+		return _isInitialized = _impl == nullptr || SUCCEEDED(_impl->Initialize(_colorSRV, _outputTexture));
 	}
 
+	bool _initializeCalled = false;
 	ID3D11ShaderResourceView *_colorSRV = nullptr;
 	ID3D11Texture2D *_outputTexture = nullptr;
 
@@ -26,6 +29,7 @@ public:
 
 	HRESULT Initialize(ID3D11ShaderResourceView* colorSRV, ID3D11Texture2D* outputTexture) override 
 	{ 
+		_initializeCalled = true;
 		_colorSRV = colorSRV;
 		_outputTexture = outputTexture;
 		TryInitialize();
@@ -55,7 +59,7 @@ public:
 			_impl->Update();
 	}
 
-	bool IsEnabled() override { return true; }
+	bool IsEnabled() override { return _initializeCalled; }
 
 	bool SupportsOutput() override 
 	{ 
