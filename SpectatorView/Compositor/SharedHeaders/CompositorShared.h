@@ -26,6 +26,10 @@
 //TODO: Set this to true if using OpenCV to get frames from a camera or capture card.
 #define USE_OPENCV     FALSE
 
+// TODO: Set this to true if the frame provider should be wrapped with a stub when the
+//       former fails to initialize
+#define WRAP_FRAME_PROVIDER TRUE
+
 static_assert((USE_ELGATO + USE_DECKLINK + USE_OPENCV == 1),
     "Exactly 1 FrameProvider must be set");
 

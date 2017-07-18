@@ -406,7 +406,7 @@ UNITYDLL bool InitializeFrameProvider()
 
     if (ci == nullptr)
     {
-        ci = new CompositorInterface();
+        ci = new CompositorInterface(WRAP_FRAME_PROVIDER);
     }
 
     bool setColorSRV = false;

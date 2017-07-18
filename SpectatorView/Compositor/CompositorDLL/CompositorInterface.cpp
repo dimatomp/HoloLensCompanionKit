@@ -3,9 +3,10 @@
 
 #include "stdafx.h"
 #include "CompositorInterface.h"
+#include "TestFrameProvider.h"
 
 
-CompositorInterface::CompositorInterface()
+CompositorInterface::CompositorInterface(bool wrapFrameProvider)
 {
     wchar_t myDocumentsPath[1024];
     SHGetFolderPathW(0, CSIDL_MYDOCUMENTS, 0, 0, myDocumentsPath);
@@ -30,6 +31,9 @@ CompositorInterface::CompositorInterface()
 #if USE_OPENCV
     frameProvider = new OpenCVFrameProvider();
 #endif
+
+	if (wrapFrameProvider)
+		frameProvider = new TestFrameProvider(frameProvider);
 
 #if USE_CANON_SDK
     canonManager = new CanonSDKManager();
