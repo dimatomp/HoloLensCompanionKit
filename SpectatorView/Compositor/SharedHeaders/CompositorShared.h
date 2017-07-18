@@ -12,7 +12,7 @@
 // Set this to TRUE to queue hologram frames to get the closest holgram frame to color frame.
 // This will produce a more stable hologram image relative to the color video, but will require more memory.
 // Otherwise, setting this to FALSE will default to always using the latest hologram frame from Unity.
-#define QUEUE_FRAMES       TRUE
+#define QUEUE_FRAMES       FALSE
 
 
 //TODO: Set this to true to use the Canon SDK to take a higher resolution tethered photos.
@@ -36,7 +36,7 @@ static_assert((USE_ELGATO + USE_DECKLINK + USE_OPENCV == 1),
 // Audio
 //TODO: Set this to true to encode audio with captured video.
 //NOTE: If you do not have Audio data, set this to false or the video may encode incorrectly.
-#define ENCODE_AUDIO TRUE
+#define ENCODE_AUDIO FALSE
 
 // These should match Game Engine's audio settings.  Size is in bytes.
 // These values should also be valid data values for H.264 encoding:

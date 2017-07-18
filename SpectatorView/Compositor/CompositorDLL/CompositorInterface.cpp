@@ -54,7 +54,8 @@ bool CompositorInterface::Initialize(ID3D11Device* device, ID3D11ShaderResourceV
 
     _device = device;
 
-    hologramQueue = new HologramQueue();
+	if (hologramQueue == nullptr)
+		hologramQueue = new HologramQueue();
 
     return SUCCEEDED(frameProvider->Initialize(colorSRV, outputTexture));
 }
