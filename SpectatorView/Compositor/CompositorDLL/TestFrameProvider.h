@@ -90,6 +90,7 @@ public:
 
 	virtual ~TestFrameProvider() 
 	{
-		delete _impl;
+		if (_impl != nullptr)
+			delete _impl;
 	}
 };
