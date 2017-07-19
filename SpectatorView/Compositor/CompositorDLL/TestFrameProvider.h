@@ -20,6 +20,7 @@ class TestFrameProvider :
 	bool _initializeCalled = false;
 	ID3D11ShaderResourceView *_colorSRV = nullptr;
 	ID3D11Texture2D *_outputTexture = nullptr;
+	LONGLONG _stubTimestamp = std::numeric_limits<LONGLONG>::min();
 
 public:
 	explicit TestFrameProvider(IFrameProvider* frame_provider)
@@ -39,11 +40,11 @@ public:
 	LONGLONG GetTimestamp() override 
 	{
 		if (TryInitialize())
-			return _impl->GetTimestamp();
+			return std::max(_stubTimestamp, _impl->GetTimestamp());
 		LARGE_INTEGER result;
 		if (!QueryPerformanceCounter(&result))
 			return INVALID_TIMESTAMP;
-		return result.QuadPart;
+		return _stubTimestamp = result.QuadPart;
 	}
 
 	LONGLONG GetDurationHNS() override 
