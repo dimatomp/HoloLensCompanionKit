@@ -42,7 +42,7 @@ private:
     LONGLONG prevAudioTime = INVALID_TIMESTAMP;
     ID3D11Device* _device;
 
-    HologramQueue* hologramQueue;
+    HologramQueue* hologramQueue = nullptr;
     LONGLONG stubVideoTime = 0;
 
 #if USE_CANON_SDK
