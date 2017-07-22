@@ -20,9 +20,9 @@
 
 // FrameProvider type - Exactly 1 of these should be true:
 //TODO: Set this to true if using a BlackMagic DeckLink capture card.
-#define USE_DECKLINK            TRUE
+#define USE_DECKLINK            FALSE
 //TODO: Set this to true if using a USB 3 external BlackMagic Shuttle capture card.
-#define USE_DECKLINK_SHUTTLE    FALSE
+#define USE_DECKLINK_SHUTTLE    TRUE
 //TODO: Set this to true if using an Elgato capture card.
 #define USE_ELGATO              FALSE
 //TODO: Set this to true if using OpenCV to get frames from a camera or capture card.
