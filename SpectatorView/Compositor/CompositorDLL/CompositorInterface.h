@@ -49,7 +49,7 @@ private:
 #endif
 
 public:
-    DLLEXPORT explicit CompositorInterface(bool wrapFrameProvider = false);
+    DLLEXPORT CompositorInterface();
 
     DLLEXPORT bool Initialize(ID3D11Device* device, ID3D11ShaderResourceView* colorSRV, ID3D11Texture2D* outputTexture);
 

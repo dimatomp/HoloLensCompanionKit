@@ -3,7 +3,6 @@
 *.user
 *.suo
 *.obj
-*.log
 
 ARM/*
 x64/*
