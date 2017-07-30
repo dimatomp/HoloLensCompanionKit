@@ -71,7 +71,7 @@ HRESULT DeckLinkManager::Initialize(ID3D11ShaderResourceView* colorSRV, ID3D11Te
                     {
                         videoDisplayMode = bmdModeHD1080p5994;
 #if USE_DECKLINK_SHUTTLE
-                        videoDisplayMode = bmdModeHD1080p2398;
+                        videoDisplayMode = bmdModeHD1080i50;
 #endif
                     }
                     else if (FRAME_HEIGHT == 2160)
